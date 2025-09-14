@@ -1,13 +1,19 @@
 import React from 'react'
-
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Signup from './pages/Signup';
+import About from './pages/About';
+import SingIn from './pages/SingIn';
 const App = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="p-8 bg-white rounded shadow-lg">
-        <h1 className="text-3xl font-bold text-blue-600 mb-4">Welcome to Realstate App</h1>
-        <p className="text-gray-700">Your one-stop solution for real estate listings.</p>
-      </div>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home/>}/> 
+      <Route path="/sign-in" element={<SingIn/>}/> 
+      <Route path="/sign-up" element={<Signup/>}/> 
+      <Route path="/about" element={<About/>}/> 
+    </Routes>
+    </BrowserRouter>
   )
 }
 
